@@ -118,6 +118,7 @@ typedef enum
 extern uint16_t DEL;
 extern int16_t Threshold;
 extern uint8_t 	RegisterA;
+extern uint8_t RegisterB;
 extern uint32_t ADCValue;
 extern uint8_t  EventFlag; 
 extern int32_t 	DACOUT;

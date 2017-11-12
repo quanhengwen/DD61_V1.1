@@ -470,8 +470,6 @@ void SetOUT1Status(void)
 {
 	if(ShortCircuit!=1)/*不是短路保护的情况下才判断OUT1的输出*/
 	{
-		/*同或运算*/
-		OUT1=!(RegisterB^RegisterA);
 		if(OUT1_Mode.DelayMode==TOFF)
 		{
 			//GPIOA->ODR ^= GPIO_Pin_9;
@@ -704,6 +702,7 @@ void ResetParameter(void)
 		ee_WriteBytes((uint8_t*)&RegisterB, 70, 1);	
 		ee_WriteBytes((uint8_t*)&DEL, 80, 2);	
 		
+		
 		ModeButton.Effect=PressNOEffect;
 		ModeButton.PressTimer = 0;
 		ModeButton.PressCounter = 0;
@@ -763,7 +762,8 @@ void GetEEPROM(void)
 		while(ee_ReadBytes((uint8_t*)&KEY,60,1)==0);
 		while(ee_ReadBytes((uint8_t*)&RegisterB,70,1)==0);
 		while(ee_ReadBytes((uint8_t*)&DEL,80,2)==0);
-
+		while(ee_ReadBytes((uint8_t*)&ADCMAX,100,4)==0);
+	
 		DAC_SetChannel1Data(DAC_Align_12b_R,(uint16_t)DACOUT);
 		DAC_SoftwareTriggerCmd(DAC_Channel_1,ENABLE);
 		

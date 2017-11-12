@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\STM32F0_DD61_Add_Del.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\STM32F0_DD61_Add_Del.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Aug 25 00:04:51 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sun Nov 12 10:09:26 2017
 <BR><P>
 <H3>Maximum Stack Usage =        140 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -181,7 +181,7 @@ Global Symbols
 
 <P><STRONG><a name="[b1]"></a>__scatterload_rt2</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, init.o(.text), UNUSED)
 
-<P><STRONG><a name="[24]"></a>ADCINcalibration</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, selfstudy.o(i.ADCINcalibration))
+<P><STRONG><a name="[24]"></a>ADCINcalibration</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, selfstudy.o(i.ADCINcalibration))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = ADCINcalibration &rArr; DAC_SetChannel1Data
 </UL>
 <BR>[Calls]<UL><LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DAC_SoftwareTriggerCmd
@@ -241,7 +241,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;adc_config
 </UL>
 
-<P><STRONG><a name="[2a]"></a>ButtonMapping</STRONG> (Thumb, 370 bytes, Stack size 24 bytes, differentialdc.o(i.ButtonMapping))
+<P><STRONG><a name="[2a]"></a>ButtonMapping</STRONG> (Thumb, 368 bytes, Stack size 24 bytes, differentialdc.o(i.ButtonMapping))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = ButtonMapping &rArr; ee_WriteBytes &rArr; i2c_SendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ReadButtonStatus
@@ -316,7 +316,7 @@ Global Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADCINcalibration
 </UL>
 
-<P><STRONG><a name="[e]"></a>DMA1_Channel1_IRQHandler</STRONG> (Thumb, 152 bytes, Stack size 24 bytes, main.o(i.DMA1_Channel1_IRQHandler))
+<P><STRONG><a name="[e]"></a>DMA1_Channel1_IRQHandler</STRONG> (Thumb, 230 bytes, Stack size 24 bytes, main.o(i.DMA1_Channel1_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = DMA1_Channel1_IRQHandler &rArr; SetOUT1Status
 </UL>
 <BR>[Calls]<UL><LI><a href="#[38]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SetOUT1Status
@@ -401,7 +401,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DisplayMODE
 </UL>
 
-<P><STRONG><a name="[3e]"></a>DisplayModeTWO</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, differentialdc.o(i.DisplayModeTWO))
+<P><STRONG><a name="[3e]"></a>DisplayModeTWO</STRONG> (Thumb, 102 bytes, Stack size 16 bytes, differentialdc.o(i.DisplayModeTWO))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = DisplayModeTWO &rArr; ee_WriteBytes &rArr; i2c_SendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMG_DisplayModeTWO
@@ -465,7 +465,7 @@ Global Symbols
 <LI><a href="#[24]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADCINcalibration
 </UL>
 
-<P><STRONG><a name="[46]"></a>GetEEPROM</STRONG> (Thumb, 162 bytes, Stack size 8 bytes, differentialdc.o(i.GetEEPROM))
+<P><STRONG><a name="[46]"></a>GetEEPROM</STRONG> (Thumb, 176 bytes, Stack size 8 bytes, differentialdc.o(i.GetEEPROM))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = GetEEPROM &rArr; ee_ReadBytes &rArr; i2c_SendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ee_CheckOk
@@ -493,7 +493,7 @@ Global Symbols
 <LI><a href="#[40]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMG_DisplayMenuTwo_DEL_SET
 </UL>
 
-<P><STRONG><a name="[4b]"></a>GetMAXADCValue</STRONG> (Thumb, 228 bytes, Stack size 24 bytes, selfstudy.o(i.GetMAXADCValue))
+<P><STRONG><a name="[4b]"></a>GetMAXADCValue</STRONG> (Thumb, 242 bytes, Stack size 24 bytes, selfstudy.o(i.GetMAXADCValue))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = GetMAXADCValue &rArr; ee_WriteBytes &rArr; i2c_SendByte
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SMG_DisplaySET_Step_2_Mode
@@ -913,7 +913,7 @@ Global Symbols
 <P><STRONG><a name="[3]"></a>SVC_Handler</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f0xx_it.o(i.SVC_Handler))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f0xx_ld.o(RESET)
 </UL>
-<P><STRONG><a name="[38]"></a>SetOUT1Status</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, differentialdc.o(i.SetOUT1Status))
+<P><STRONG><a name="[38]"></a>SetOUT1Status</STRONG> (Thumb, 172 bytes, Stack size 24 bytes, differentialdc.o(i.SetOUT1Status))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = SetOUT1Status
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_WriteBit

@@ -384,18 +384,17 @@ ARM Macro Assembler    Page 6
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M0 --apcs=interw
 ork --depend=.\objects\startup_stm32f0xx_ld.d -o.\objects\startup_stm32f0xx_ld.
-o -IE:\project\MrWu\Project\Project\code\Code\STM32F051_DD61_Add_DEl\STM32F051_
-DD61_Add_DEl\STM32F051_DD61\MDK-ARM\RTE -Id:\Keil_v5\ARM\PACK\Keil\STM32F0xx_DF
-P\1.4.0\Device\Include -Id:\Keil_v5\ARM\CMSIS\Include --predefine="__MICROLIB S
-ETA 1" --predefine="__UVISION_VERSION SETA 514" --predefine="STM32F051 SETA 1" 
+o -IE:\project\MrWu\Project\Project\code\Code\DD61_V1.1\MDK-ARM\RTE -Id:\Keil_v
+5\ARM\PACK\Keil\STM32F0xx_DFP\1.4.0\Device\Include -Id:\Keil_v5\ARM\CMSIS\Inclu
+de --predefine="__MICROLIB SETA 1" --predefine="__UVISION_VERSION SETA 514" --p
+redefine="STM32F051 SETA 1" --list=.\listings\startup_stm32f0xx_ld.lst ..\Libra
 
 
 
 ARM Macro Assembler    Page 7 
 
 
---list=.\listings\startup_stm32f0xx_ld.lst ..\Libraries\CMSIS\Device\ST\STM32F0
-xx\Source\Templates\arm\startup_stm32f0xx_ld.s
+ries\CMSIS\Device\ST\STM32F0xx\Source\Templates\arm\startup_stm32f0xx_ld.s
 
 
 

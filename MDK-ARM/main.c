@@ -5,7 +5,7 @@
 #include "display.h"
 #include "bsp_eeprom_24xx.h"
 #include "menu.h"
-
+#include "selfstudy.h"
 
 #define DMA_BUFFER_SIZE     1  
 
@@ -464,6 +464,9 @@ void TIM3_IRQHandler()
 		}
 }
 
+
+uint32_t OUTADCValue_Counter=0; //用于记录Register A后面的16个ADC数量
+uint8_t OUTADCValue_CounterFlag=0; //用于进入Register A后的flag
 void DMA1_Channel1_IRQHandler()  
 {  
 //		if(DMA_GetITStatus(DMA_IT_HT))
@@ -481,16 +484,30 @@ void DMA1_Channel1_IRQHandler()
 					OUTADCValue= OUTSumADCValue/4;
 					OUTSumADCValue = 0;
 					sample_finish = 1;
-					if(OUTADCValue>=Threshold)
+					if(OUTADCValue>=Threshold&&OUTADCValue<=ADCMAX+50&&OUTADCValue_CounterFlag==0) /*Change at 2017-11-11,by HarryZeng*/
+					{
 						RegisterA = 1;
+						OUTADCValue_CounterFlag=1;
+					}
 					else if(OUTADCValue<=Threshold-DEL)
+					{
 						RegisterA = 0;
-					
+						OUTADCValue_CounterFlag = 0;
+						OUT1=!(RegisterB^RegisterA);
+					}
+					else if(OUTADCValue_CounterFlag==1&&OUTADCValue<=ADCMAX+50)  /*在算这个16个ADC的过程中，只要有一次是跳变回0，都将前面的作废*/
+					{
+						OUTADCValue_Counter++;
+						if(OUTADCValue_Counter>=16)
+						/*设置OUT1的状态*/
+						{
+							OUTADCValue_Counter = 0;
+							/*同或运算*/
+							OUT1=!(RegisterB^RegisterA);
+						}
+					}	
 					OUT1_Mode.DelayCounter++;
-
-					/*设置OUT1的状态*/
 					SetOUT1Status();
-					
 					if(LastRegisterA==0&&RegisterA==1)
 					{
 						CPV++;

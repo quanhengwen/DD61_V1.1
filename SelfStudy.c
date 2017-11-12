@@ -95,7 +95,7 @@ void selfstudy(void)
 
 
 /*在一系列的ADCvalue中寻找最大的ADV MAX*/
-uint32_t 			ADCMAX=0;
+uint32_t 			ADCMAX=1000;
 uint32_t 		NewThreshold=0;
 uint32_t 		TempMaxADCValue=0;
 void GetMAXADCValue(void)
@@ -135,6 +135,7 @@ void GetMAXADCValue(void)
 					//	arm_max_f32(TempADCValue_f[1],i,&ADCMAX,&MAX_Index);  /*获得最大的ADCIN值*/
 						
 						ADCMAX = TempMaxADCValue;
+						ee_WriteBytes((uint8_t*)&ADCMAX, 100, 4);
 						NewThreshold = (CalibrateADCValue+ADCMAX)/2;				/*获得本次自学习的OUT1阈值*/
 						
 						GPIO_WriteBit(OUT1_GPIO_Port,OUT1_Pin,(BitAction)GPIO_ReadInputDataBit(OUT1_GPIO_Port,OUT1_Pin));
@@ -249,9 +250,15 @@ void ADCINcalibration(void)
 				DACOUT = DACOUT+1;
 			}
 			if(DACOUT>=4095)
+			{
 				DACOUT = 4095;
+				break;
+			}
 			else if(DACOUT<=0)
+			{
 				DACOUT = 0;
+				break;
+			}
 			DAC_SetChannel1Data(DAC_Align_12b_R,(uint16_t)DACOUT);
 			DAC_SoftwareTriggerCmd(DAC_Channel_1,ENABLE);
 		}

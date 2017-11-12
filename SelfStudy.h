@@ -25,6 +25,7 @@
 #include 	"stdbool.h"
 #include 	"stdint.h"
 
+extern uint32_t 			ADCMAX;
 	 
 void selfstudy(void);
 	 

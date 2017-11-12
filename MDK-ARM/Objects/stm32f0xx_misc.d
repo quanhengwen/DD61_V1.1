@@ -6,7 +6,7 @@
 .\objects\stm32f0xx_misc.o: ..\Libraries\CMSIS\Include\core_cmInstr.h
 .\objects\stm32f0xx_misc.o: ..\Libraries\CMSIS\Include\core_cmFunc.h
 .\objects\stm32f0xx_misc.o: ..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\system_stm32f0xx.h
-.\objects\stm32f0xx_misc.o: ..\..\STM32F051_DD61\stm32f0xx_conf.h
+.\objects\stm32f0xx_misc.o: ..\..\DD61_V1.1\stm32f0xx_conf.h
 .\objects\stm32f0xx_misc.o: ..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_adc.h
 .\objects\stm32f0xx_misc.o: ..\Libraries\CMSIS\Device\ST\STM32F0xx\Include\stm32f0xx.h
 .\objects\stm32f0xx_misc.o: ..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_can.h
